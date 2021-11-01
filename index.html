@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+ </head>
+
+ <body>
+  <div class="container" style="margin: 0 auto;max-width: 400px;">
+   <div class="input-wrapper drag-drop">
+    <div class="input-inner">
+     <div class="drop-aria">
+      <div class="drop-aria-input">
+       <div class="drag-drop-custom-label has-tooltip">Прикрепить приказ
+        <i class="icon-help-circle tooltip" data-tooltip="Загружай файлы *jpeg, *png, *pdf. Максимальный размер файла 20 мб" data-pos="right"></i>
+       </div>
+       <div class="drag-drop-uploaded">
+       </div>
+       <div class="drag-drop-icon c-c">
+        <img src="./img/drag-drop.svg" alt="">
+       </div>
+       <input type="file" id="fileElem" multiple onchange="handleFiles(this.files)" accept="image/*;capture=camera">
+       <div class="drag-drop-label c-c">
+        <span class="drag-drop-complite">Готово!</span>
+        <label for="fileElem">Выбери файлы</label>
+        <span class="drag-drop-instruction">или перетащи сюда</span>
+
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+
+ </body>
+ <script src="./app.js"></script>
+
+</html>

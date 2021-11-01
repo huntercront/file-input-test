@@ -1,0 +1,200 @@
+.c-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drop-aria {
+    background: #F5F6FA;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    transition: 150ms ease-in;
+    transition-property: background;
+}
+
+.drop-aria.in-aria {
+    background: #f5e2ff;
+}
+
+.drag-drop-icon {
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    user-select: none;
+    pointer-events: none;
+}
+
+.drag-drop-icon img {
+    width: 100%;
+    max-width: 120px;
+    transition: 150ms ease-in;
+}
+
+.drag-drop-uploaded {
+    min-height: 9rem;
+}
+
+.drop-aria.in-aria .drag-drop-icon img {
+    transform: scale(1.1);
+}
+
+.drop-aria.in-aria .drop-aria-input {
+    border: 2px dashed #A100FF;
+}
+
+.drop-aria .drop-aria-input {
+    border: 2px dashed #b5bccc;
+    border-radius: 4px;
+    position: relative;
+    transition: 150ms ease-in;
+    transition-property: border;
+}
+
+.drag-drop .drop-aria-input input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.drag-drop .drop-aria-input .drag-drop-label label {
+    background: #ffffff;
+    padding: 0.35rem 1rem;
+    border: 1px solid #D7D9DC;
+    border-radius: 2px;
+    transition: 200ms ease-in;
+    box-shadow: 0 0 0 0.5px transparent;
+    transition-property: border;
+    width: auto;
+}
+
+.drag-drop .drop-aria-input .drag-drop-label label:hover {
+    border: 1px solid #A100FF;
+    cursor: pointer;
+}
+
+.drag-drop-instruction .drag-drop-complite {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.drag-drop .doc-box {
+    margin: 0.5rem;
+    border: none;
+    background: #ffffff;
+    animation: appear-from-inside .25s ease-in-out;
+}
+
+.drag-drop-label {
+    margin: 1rem;
+}
+
+.drag-drop-complite {
+    display: none;
+    margin-right: 0.5rem;
+}
+
+.drag-drop-instruction {
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.drop-aria.upload-complite .drag-drop-complite {
+    display: block;
+}
+
+.drop-aria.upload-complite .drag-drop-instruction {
+    display: none;
+}
+
+.drop-aria.upload-complite .drag-drop-label {
+    animation: text-change .25s ease-in-out;
+}
+
+.drag-drop .doc-box.doc-box-removed {
+    animation: appear-inside-from .25s ease-in-out forwards;
+}
+
+@keyframes text-change {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes appear-from-inside {
+    0% {
+        transform: scale(0.7);
+    }
+    100% {
+        transform: scale( 1);
+    }
+}
+
+@keyframes appear-inside-from {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.7);
+    }
+}
+
+.drop-aria.upload-complite .drag-drop-icon,
+.drop-aria.files-upload .drag-drop-icon {
+    display: none;
+}
+
+.drop-aria.ready-new .drag-drop-icon {
+    animation: appear-from-inside .25s ease-in-out;
+}
+
+.drop-aria .drag-drop-custom-label {
+    font-weight: 600;
+    padding: 0.5rem;
+}
+
+.files-upload .drag-drop-load {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+}
+
+.drag-drop-load,
+.upload-complite .drag-drop-load {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 100%;
+}
+
+@media screen and (max-width:768px) {
+    .drag-drop-uploaded {
+        min-height: 3rem;
+    }
+    .drag-drop-icon {
+        top: 2rem;
+    }
+    .drag-drop-icon img {
+        max-width: 5rem;
+    }
+    .drag-drop-label label {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    .drag-drop-instruction {
+        font-size: 0.8rem;
+    }
+    .drag-drop-label {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+}
